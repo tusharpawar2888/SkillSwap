@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Tutor - SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/become-tutor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Skill<span class="highlight">Swap</span></span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="browse.html" class="nav-link">Browse Skills</a>
+                    <a href="find_tutor.html" class="nav-link">Find Tutors</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Explore
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="browse.html?category=academic">Academic Help</a>
+                            <a href="browse.html?category=projects">Project Help</a>
+                            <a href="browse.html?category=tutoring">Tutoring</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-auth">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search skills...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="auth-buttons">
+                        <a href="login.html" class="btn btn-login">Login</a>
+                        <a href="register.html" class="btn btn-register">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Share Your Expertise and Earn with SkillSwap</h1>
+            <p class="subheadline">Join our community of experts and connect with learners worldwide</p>
+            <button class="cta-button" onclick="location.href='register.html'">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <h2>Why Choose SkillSwap?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <img src="https://fj-employer-blog.s3.amazonaws.com/employer-blog/wp-content/uploads/2020/10/27125140/Flexible-Jobs.png" alt="Flexibility">
+                <h3>Flexible Schedule</h3>
+                <p>Set your own hours and teach from anywhere in the world</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://www.asiaeducationreview.com/uploaded_images/newstransfer/jivv3publish0.jpg" alt="Global Reach">
+                <h3>Global Reach</h3>
+                <p>Connect with students from around the world</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqII-UR26jc7cU6l9yqXDEyzjGyCEjsY_hqA&s" alt="Earnings">
+                <h3>Competitive Earnings</h3>
+                <p>Set your own rates and receive secure payments</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2>How to Get Started</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Sign Up</h3>
+                <p>Create your free account and verify your email</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Create Your Profile</h3>
+                <p>Showcase your expertise, experience, and teaching style</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>List Your Courses</h3>
+                <p>Set up your courses and tutoring sessions</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Start Teaching</h3>
+                <p>Accept students and begin your tutoring journey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Success Stories</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <img src="images/tutor-1.jpg" alt="Tutor Sarah">
+                <blockquote>
+                    "SkillSwap has given me the flexibility to teach on my own terms while reaching students globally."
+                </blockquote>
+                <p class="testimonial-author">Sarah M., Language Tutor</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="images/tutor-2.jpg" alt="Tutor James">
+                <blockquote>
+                    "I've found a passionate community of learners and doubled my teaching income."
+                </blockquote>
+                <p class="testimonial-author">James K., Programming Instructor</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>What qualifications do I need?</h3>
+                <p>We welcome experts with proven knowledge in their field, whether through formal education, professional experience, or demonstrated expertise.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do payments work?</h3>
+                <p>You'll receive payments securely through our platform. Set your own rates and get paid weekly for completed sessions.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What support does SkillSwap provide?</h3>
+                <p>We offer comprehensive teaching tools, 24/7 support, and resources to help you succeed as a tutor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <h2>Ready to Start Your Teaching Journey?</h2>
+        <button class="cta-button" onclick="location.href='register.html'">Join as a Tutor</button>
+    </section>
+
+    <!-- Tutor Registration Form -->
+    <section class="tutor-registration">
+        <div class="container">
+            <div class="registration-header">
+                <h1>Become a Tutor</h1>
+                <p>Share your knowledge and earn by teaching others</p>
+            </div>
+
+            <form id="tutorRegistrationForm" class="registration-form">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h2><i class="fas fa-user"></i> Personal Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name*</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number*</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">City*</label>
+                            <input type="text" id="location" name="location" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Information -->
+                <div class="form-section">
+                    <h2><i class="fas fa-briefcase"></i> Professional Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="qualification">Highest Qualification*</label>
+                            <input type="text" id="qualification" name="qualification" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience*</label>
+                            <input type="number" id="experience" name="experience" min="0" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="expertise">Areas of Expertise*</label>
+                            <input type="text" id="expertise" name="expertise" placeholder="e.g., Mathematics, Physics, Programming" required>
+                            <small>Separate multiple subjects with commas</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teaching Preferences -->
+                <div class="form-section">
+                    <h2><i class="fas fa-chalkboard-teacher"></i> Teaching Preferences</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="teachingMode">Preferred Teaching Mode*</label>
+                            <select id="teachingMode" name="teachingMode" required>
+                                <option value="">Select Mode</option>
+                                <option value="online">Online Only</option>
+                                <option value="in-person">In-Person Only</option>
+                                <option value="both">Both Online & In-Person</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hourlyRate">Hourly Rate (₹)*</label>
+                            <input type="number" id="hourlyRate" name="hourlyRate" min="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="availability">Weekly Availability (Hours)*</label>
+                            <input type="number" id="availability" name="availability" min="1" max="40" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="languages">Languages Spoken*</label>
+                            <input type="text" id="languages" name="languages" placeholder="e.g., English, Hindi, Marathi" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Information -->
+                <div class="form-section">
+                    <h2><i class="fas fa-id-card"></i> Profile Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="bio">Professional Bio*</label>
+                            <textarea id="bio" name="bio" rows="4" required 
+                                placeholder="Tell students about your teaching experience, approach, and what makes you unique..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="profilePhoto">Profile Photo*</label>
+                            <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="documents">Certificates/Documents*</label>
+                            <input type="file" id="documents" name="documents" accept=".pdf,.doc,.docx" multiple required>
+                            <small>Upload relevant certificates, degrees, or teaching credentials</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification and Agreement -->
+                <div class="form-section">
+                    <h2><i class="fas fa-shield-alt"></i> Verification & Agreement</h2>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agreement" name="agreement" required>
+                            I agree to SkillSwap's Terms of Service and Privacy Policy
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="certification" name="certification" required>
+                            I certify that all information provided is true and accurate
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Premium Option -->
+                <div class="form-section premium-section">
+                    <h2><i class="fas fa-star"></i> Premium Tutor Benefits</h2>
+                    <div class="premium-features">
+                        <div class="premium-feature">
+                            <i class="fas fa-percentage"></i>
+                            <span>Lower commission rate (7% vs 10%)</span>
+                        </div>
+                        <div class="premium-feature">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Priority in search results</span>
+                        </div>
+                        <div class="premium-feature">
+                            <i class="fas fa-badge-check"></i>
+                            <span>Verified Premium Badge</span>
+                        </div>
+                        <div class="premium-feature">
+                            <i class="fas fa-analytics"></i>
+                            <span>Advanced Analytics</span>
+                        </div>
+                    </div>
+                    <div class="premium-toggle">
+                        <label class="switch">
+                            <input type="checkbox" id="premiumOption" name="premiumOption">
+                            <span class="slider round"></span>
+                        </label>
+                        <span>Become a Premium Tutor (₹999/month)</span>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                    <p class="form-note">* Required fields</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/become-tutor.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Request - SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Skill<span class="highlight">Swap</span></span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="browse.html" class="nav-link">Browse Skills</a>
+                    <a href="post.html" class="nav-link active">Post Request</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Explore
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="browse.html?category=academic">Academic Help</a>
+                            <a href="browse.html?category=projects">Project Help</a>
+                            <a href="browse.html?category=tutoring">Tutoring</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-auth">
+                    <div class="auth-buttons">
+                        <a href="login.html" class="btn btn-login">Login</a>
+                        <a href="register.html" class="btn btn-register">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Post Request Form Section -->
+    <section class="post-request">
+        <div class="container">
+            <div class="form-container">
+                <h1>Post Your Learning Request</h1>
+                <p class="subtitle">Describe what you want to learn and find the perfect tutor</p>
+
+                <form id="request-form" class="request-form">
+                    <div class="form-group">
+                        <label for="title">Request Title</label>
+                        <input type="text" id="title" name="title" placeholder="e.g., Need Python Programming Tutor" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="programming">Programming</option>
+                                <option value="languages">Languages</option>
+                                <option value="mathematics">Mathematics</option>
+                                <option value="science">Science</option>
+                                <option value="arts">Arts & Design</option>
+                                <option value="business">Business</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skill-level">Your Current Skill Level</label>
+                            <select id="skill-level" name="skill-level" required>
+                                <option value="">Select your level</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Detailed Description</label>
+                        <textarea id="description" name="description" rows="6" 
+                            placeholder="Describe what you want to learn, your goals, and any specific requirements..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="duration">Expected Duration</label>
+                            <select id="duration" name="duration" required>
+                                <option value="">Select duration</option>
+                                <option value="one-time">One-time Session</option>
+                                <option value="short-term">Short-term (1-4 weeks)</option>
+                                <option value="long-term">Long-term (1+ months)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Budget Range (per hour)</label>
+                            <select id="budget" name="budget" required>
+                                <option value="">Select budget range</option>
+                                <option value="0-20">$0 - $20</option>
+                                <option value="20-50">$20 - $50</option>
+                                <option value="50-100">$50 - $100</option>
+                                <option value="100+">$100+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="availability">Your Availability</label>
+                        <div class="availability-grid">
+                            <div class="availability-item">
+                                <input type="checkbox" id="morning" name="availability[]" value="morning">
+                                <label for="morning">Morning</label>
+                            </div>
+                            <div class="availability-item">
+                                <input type="checkbox" id="afternoon" name="availability[]" value="afternoon">
+                                <label for="afternoon">Afternoon</label>
+                            </div>
+                            <div class="availability-item">
+                                <input type="checkbox" id="evening" name="availability[]" value="evening">
+                                <label for="evening">Evening</label>
+                            </div>
+                            <div class="availability-item">
+                                <input type="checkbox" id="weekend" name="availability[]" value="weekend">
+                                <label for="weekend">Weekends</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attachments">Attachments (Optional)</label>
+                        <div class="file-upload">
+                            <input type="file" id="attachments" name="attachments" multiple>
+                            <label for="attachments" class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Drop files here or click to upload</span>
+                            </label>
+                        </div>
+                        <p class="help-text">You can upload relevant documents, syllabi, or examples (Max 5MB each)</p>
+                    </div>
+
+                    <div class="form-group preferences">
+                        <h3>Additional Preferences</h3>
+                        <div class="preference-options">
+                            <div class="preference-item">
+                                <input type="checkbox" id="native-speaker" name="preferences[]" value="native-speaker">
+                                <label for="native-speaker">Native Speaker (for languages)</label>
+                            </div>
+                            <div class="preference-item">
+                                <input type="checkbox" id="certified" name="preferences[]" value="certified">
+                                <label for="certified">Certified Tutor</label>
+                            </div>
+                            <div class="preference-item">
+                                <input type="checkbox" id="video-sessions" name="preferences[]" value="video-sessions">
+                                <label for="video-sessions">Video Sessions</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Post Request
+                        </button>
+                        <button type="button" class="btn btn-outline" onclick="saveAsDraft()">
+                            <i class="fas fa-save"></i>
+                            Save as Draft
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tips-sidebar">
+                <div class="tips-card">
+                    <h3><i class="fas fa-lightbulb"></i> Tips for Better Responses</h3>
+                    <ul>
+                        <li>Be specific about your learning goals</li>
+                        <li>Mention your current knowledge level</li>
+                        <li>Include preferred learning methods</li>
+                        <li>Specify time zones if relevant</li>
+                        <li>List any tools or software required</li>
+                    </ul>
+                </div>
+
+                <div class="tips-card">
+                    <h3><i class="fas fa-shield-alt"></i> Safety Tips</h3>
+                    <ul>
+                        <li>Don't share personal contact information</li>
+                        <li>Keep communication within the platform</li>
+                        <li>Review tutor profiles carefully</li>
+                        <li>Start with a trial session</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/post.js"></script>
+</body>
+</html>

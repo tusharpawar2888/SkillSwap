@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tutor-dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tutor Dashboard</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="profile.html">Profile</a>
+                <a href="help.html">Help</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="dashboard-grid">
+                <!-- Profile Summary Section -->
+                <section class="profile-summary">
+                    <div class="profile-header">
+                        <img src="https://placeholder.com/150x150" alt="Tutor Profile" id="profile-image">
+                        <div class="profile-info">
+                            <h2 id="tutor-name">Dr. Sarah Johnson</h2>
+                            <p class="rating">⭐ 4.8 (125 reviews)</p>
+                            <button id="edit-profile-btn" class="btn">Edit Profile</button>
+                        </div>
+                    </div>
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <h3>Total Sessions</h3>
+                            <p>156</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>This Month</h3>
+                            <p>24</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Earnings</h3>
+                            <p>$1,280</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Upcoming Sessions Section -->
+                <section class="upcoming-sessions">
+                    <h2>Upcoming Sessions</h2>
+                    <div class="sessions-list" id="upcoming-sessions">
+                        <!-- Sessions will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Availability Manager -->
+                <section class="availability-manager">
+                    <h2>Manage Availability</h2>
+                    <div class="availability-grid" id="availability-grid">
+                        <!-- Time slots will be populated by JavaScript -->
+                    </div>
+                    <button id="save-availability" class="btn">Save Changes</button>
+                </section>
+
+                <!-- Student Requests -->
+                <section class="student-requests">
+                    <h2>Pending Requests</h2>
+                    <div class="requests-list" id="pending-requests">
+                        <!-- Requests will be populated by JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Tutor Platform. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/tutor-dashboard.js"></script>
+</body>
+</html>

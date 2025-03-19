@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Tutor - SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/find_tutor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Skill<span class="highlight">Swap</span></span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="browse.html" class="nav-link">Browse Skills</a>
+                    <a href="post.html" class="nav-link">Post Request</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Explore
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="browse.html?category=academic">Academic Help</a>
+                            <a href="browse.html?category=projects">Project Help</a>
+                            <a href="browse.html?category=tutoring">Tutoring</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-auth">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search tutors...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="auth-buttons">
+                        <a href="login.html" class="btn btn-login">Login</a>
+                        <a href="register.html" class="btn btn-register">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Hero Section -->
+    <section class="search-hero">
+        <div class="container">
+            <h1>Find Your Perfect Tutor</h1>
+            <p>Connect with expert tutors who can help you achieve your learning goals</p>
+            
+            <div class="advanced-search">
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <input type="text" placeholder="Subject or Skill" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Select Category</option>
+                            <option value="programming">Programming</option>
+                            <option value="languages">Languages</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="science">Science</option>
+                            <option value="arts">Arts & Design</option>
+                            <option value="business">Business</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Experience Level</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="expert">Expert</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Price Range</option>
+                            <option value="0-20">$0 - $20/hr</option>
+                            <option value="20-50">$20 - $50/hr</option>
+                            <option value="50-100">$50 - $100/hr</option>
+                            <option value="100+">$100+/hr</option>
+                        </select>
+                    </div>
+                    <button class="search-submit">
+                        <i class="fas fa-search"></i>
+                        Search Tutors
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tutors -->
+    <section class="featured-tutors">
+        <div class="container">
+            <div class="section-header">
+                <h2>Top Rated Tutors</h2>
+                <div class="view-options">
+                    <button class="view-toggle active" data-view="grid">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="view-toggle" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tutor-grid">
+                <!-- Tutor Card 1 -->
+                <div class="tutor-card premium-tutor" data-tutor-id="tutor_001" data-rate="800">
+                    <div class="tutor-header">
+                        <img src="images/tutor1.jpg" alt="Aaryan Dongardive">
+                        <div class="tutor-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                        <button class="play-intro" data-video="tutor1-intro.mp4">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Watch Intro</span>
+                        </button>
+                    </div>
+                    <div class="tutor-info">
+                        <div class="tutor-status online"></div>
+                        <h3>Aaryan Dongardive</h3>
+                        <p class="specialty">Mathematics & Physics Expert</p>
+                        <div class="skills">
+                            <span>Calculus</span>
+                            <span>Physics</span>
+                            <span>Statistics</span>
+                        </div>
+                        <p class="sessions">150+ sessions completed</p>
+                        <div class="price-tag">₹800/hour</div>
+                        <div class="availability">
+                            <i class="fas fa-clock"></i>
+                            <span>Available Today</span>
+                        </div>
+                        <div class="tutor-actions">
+                            <a href="profile.html" class="btn btn-outline">View Profile</a>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tutor Card 2 -->
+                <div class="tutor-card" data-tutor-id="tutor_002" data-rate="600">
+                    <div class="tutor-header">
+                        <img src="images/tutor2.jpg" alt="Sarang">
+                        <div class="tutor-rating">
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <button class="play-intro" data-video="tutor2-intro.mp4">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Watch Intro</span>
+                        </button>
+                    </div>
+                    <div class="tutor-info">
+                        <div class="tutor-status busy"></div>
+                        <h3>Sarang</h3>
+                        <p class="specialty">Language & Literature</p>
+                        <div class="skills">
+                            <span>Web Development</span>
+                            <span>Business</span>
+                        </div>
+                        <p class="sessions">200+ sessions completed</p>
+                        <div class="price-tag">₹600/hour</div>
+                        <div class="availability">
+                            <i class="fas fa-clock"></i>
+                            <span>Next Available: Tomorrow</span>
+                        </div>
+                        <div class="tutor-actions">
+                            <a href="profile.html" class="btn btn-outline">View Profile</a>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tutor Card 3 -->
+                <div class="tutor-card premium-tutor" data-tutor-id="tutor_003" data-rate="1000">
+                    <div class="tutor-header">
+                        <img src="images/tutor3.jpg" alt="Tushar Pawar">
+                        <div class="tutor-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                        <button class="play-intro" data-video="tutor3-intro.mp4">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Watch Intro</span>
+                        </button>
+                    </div>
+                    <div class="tutor-info">
+                        <div class="tutor-status online"></div>
+                        <h3>Tushar Pawar</h3>
+                        <p class="specialty">Programming & Web Development</p>
+                        <div class="skills">
+                            <span>Python</span>
+                            <span>Web Development</span>
+                            <span>Java</span>
+                        </div>
+                        <p class="sessions">180+ sessions completed</p>
+                        <div class="price-tag">₹1000/hour</div>
+                        <div class="availability">
+                            <i class="fas fa-clock"></i>
+                            <span>Available Today</span>
+                        </div>
+                        <div class="tutor-actions">
+                            <a href="tushar.html" class="btn btn-outline">View Profile</a>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more">
+                <button class="btn btn-outline">
+                    <i class="fas fa-spinner"></i>
+                    Load More Tutors
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subject Categories -->
+    <section class="subject-categories">
+        <div class="container">
+            <h2>Browse by Subject</h2>
+            <div class="category-grid">
+                <a href="#" class="category-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Programming</h3>
+                    <p>150+ Tutors</p>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Mathematics</h3>
+                    <p>200+ Tutors</p>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Languages</h3>
+                    <p>180+ Tutors</p>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-atom"></i>
+                    <h3>Sciences</h3>
+                    <p>120+ Tutors</p>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Arts & Design</h3>
+                    <p>90+ Tutors</p>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Business</h3>
+                    <p>100+ Tutors</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Our Tutors?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Verified Experts</h3>
+                    <p>All tutors are thoroughly vetted and qualified in their subjects</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Book sessions at times that work best for you</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Satisfaction Guaranteed</h3>
+                    <p>Money-back guarantee if you're not satisfied with your session</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Instant Communication</h3>
+                    <p>Direct messaging with tutors before booking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/find_tutor.js"></script>
+</body>
+</html>

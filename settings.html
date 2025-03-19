@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html">SkillSwap</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="messages.html">Messages</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </nav>
+
+    <!-- Settings Content -->
+    <div class="settings-container">
+        <div class="settings-sidebar">
+            <h2>Settings</h2>
+            <ul class="settings-menu">
+                <li class="active" data-tab="account">Account Settings</li>
+                <li data-tab="profile">Profile Settings</li>
+                <li data-tab="notifications">Notifications</li>
+                <li data-tab="privacy">Privacy & Security</li>
+                <li data-tab="payment">Payment Methods</li>
+                <li data-tab="preferences">Preferences</li>
+            </ul>
+        </div>
+
+        <div class="settings-content">
+            <!-- Account Settings -->
+            <div class="settings-section active" id="account">
+                <h3>Account Settings</h3>
+                <form class="settings-form">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" value="user@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" value="username123">
+                    </div>
+                    <div class="form-group">
+                        <label>Change Password</label>
+                        <input type="password" placeholder="Current Password">
+                        <input type="password" placeholder="New Password">
+                        <input type="password" placeholder="Confirm New Password">
+                    </div>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </form>
+            </div>
+
+            <!-- Profile Settings -->
+            <div class="settings-section" id="profile">
+                <h3>Profile Settings</h3>
+                <form class="settings-form">
+                    <div class="form-group">
+                        <label>Profile Picture</label>
+                        <div class="profile-picture-upload">
+                            <img src="images/default-avatar.png" alt="Profile Picture">
+                            <input type="file" accept="image/*">
+                            <button type="button">Upload New Picture</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Bio</label>
+                        <textarea rows="4">I am a passionate learner and teacher...</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Skills</label>
+                        <div class="skills-input">
+                            <input type="text" placeholder="Add a skill">
+                            <div class="skills-tags">
+                                <span>JavaScript<i class="fas fa-times"></i></span>
+                                <span>Python<i class="fas fa-times"></i></span>
+                                <span>Web Design<i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </form>
+            </div>
+
+            <!-- Notifications Settings -->
+            <div class="settings-section" id="notifications">
+                <h3>Notification Preferences</h3>
+                <form class="settings-form">
+                    <div class="notification-option">
+                        <label>
+                            <input type="checkbox" checked>
+                            Email notifications for new messages
+                        </label>
+                    </div>
+                    <div class="notification-option">
+                        <label>
+                            <input type="checkbox" checked>
+                            Email notifications for new session requests
+                        </label>
+                    </div>
+                    <div class="notification-option">
+                        <label>
+                            <input type="checkbox" checked>
+                            Browser notifications
+                        </label>
+                    </div>
+                    <div class="notification-option">
+                        <label>
+                            <input type="checkbox">
+                            Marketing emails and updates
+                        </label>
+                    </div>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </form>
+            </div>
+
+            <!-- Privacy Settings -->
+            <div class="settings-section" id="privacy">
+                <h3>Privacy & Security</h3>
+                <form class="settings-form">
+                    <div class="privacy-option">
+                        <label>Profile Visibility</label>
+                        <select>
+                            <option>Public</option>
+                            <option>Private</option>
+                            <option>Friends Only</option>
+                        </select>
+                    </div>
+                    <div class="privacy-option">
+                        <label>
+                            <input type="checkbox" checked>
+                            Two-factor authentication
+                        </label>
+                    </div>
+                    <div class="privacy-option">
+                        <label>
+                            <input type="checkbox" checked>
+                            Show online status
+                        </label>
+                    </div>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </form>
+            </div>
+
+            <!-- Payment Settings -->
+            <div class="settings-section" id="payment">
+                <h3>Payment Methods</h3>
+                <div class="payment-methods">
+                    <div class="payment-card">
+                        <div class="card-info">
+                            <i class="fas fa-credit-card"></i>
+                            <span>•••• •••• •••• 4242</span>
+                            <span>Expires 12/24</span>
+                        </div>
+                        <button class="remove-card">Remove</button>
+                    </div>
+                    <button class="add-payment-method">
+                        <i class="fas fa-plus"></i>
+                        Add New Payment Method
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preferences -->
+            <div class="settings-section" id="preferences">
+                <h3>Preferences</h3>
+                <form class="settings-form">
+                    <div class="preference-option">
+                        <label>Language</label>
+                        <select>
+                            <option>English</option>
+                            <option>Spanish</option>
+                            <option>French</option>
+                        </select>
+                    </div>
+                    <div class="preference-option">
+                        <label>Time Zone</label>
+                        <select>
+                            <option>UTC-5 (Eastern Time)</option>
+                            <option>UTC-8 (Pacific Time)</option>
+                            <option>UTC+0 (GMT)</option>
+                        </select>
+                    </div>
+                    <div class="preference-option">
+                        <label>
+                            <input type="checkbox" checked>
+                            Dark Mode
+                        </label>
+                    </div>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About SkillSwap</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety Center</a></li>
+                    <li><a href="#">Community Guidelines</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SkillSwap. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/settings.js"></script>
+</body>
+</html>

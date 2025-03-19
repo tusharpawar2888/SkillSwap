@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap - Peer Tutoring and Project Help Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/auth.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Skill<span class="highlight">Swap</span></span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="browse.html" class="nav-link">Browse Skills</a>
+                    <a href="post.html" class="nav-link">Post Request</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Explore
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="browse.html?category=academic">Academic Help</a>
+                            <a href="browse.html?category=projects">Project Help</a>
+                            <a href="browse.html?category=tutoring">Tutoring</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-auth">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search skills...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="auth-buttons">
+                        <a href="login.html" class="btn btn-login">Login</a>
+                        <a href="register.html" class="btn btn-register">Sign Up</a>
+                    </div>
+                    <!-- User Menu (shows when logged in) -->
+                    <div class="user-menu hidden">
+                        <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" alt="Profile" class="avatar">
+                        <div class="user-dropdown">
+                            <div class="profile-email"></div>
+                            <a href="tutor-dashboard.html">Dashboard</a>
+                            <a href="profile.html">My Profile</a>
+                            <a href="messages.html">Messages</a>
+                            <a href="settings.html">Settings</a>
+                            <hr>
+                            <a href="#" class="logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Unlock Your Potential with Expert Tutors</h1>
+            <p>Connect with verified tutors, learn at your pace, and achieve your goals</p>
+            <div class="hero-search">
+                <div class="search-filters">
+                    <select class="hero-filter">
+                        <option value="">All Categories</option>
+                        <option value="programming">Programming</option>
+                        <option value="languages">Languages</option>
+                        <option value="math">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="business">Business</option>
+                    </select>
+                    <input type="text" placeholder="What would you like to learn?" class="hero-search-input">
+                </div>
+                <button class="hero-search-btn">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span>10,000+</span> Active Tutors</div>
+                <div class="stat"><span>50,000+</span> Students</div>
+                <div class="stat"><span>100,000+</span> Sessions</div>
+            </div>
+            <div class="hero-buttons">
+                <a href="find_tutor.html" class="btn btn-primary">Find a Tutor <i class="fas fa-arrow-right"></i></a>
+                <a href="become-tutor.html" class="btn btn-secondary">Become a Tutor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Subjects -->
+    <section class="trending">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trending Subjects</h2>
+                <a href="browse.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="trending-grid">
+                <a href="#" class="trending-card">
+                    <span class="trend-rank">#1</span>
+                    <h3>Python Programming</h3>
+                    <p>2,145 active tutors</p>
+                    <div class="trend-stats">
+                        <span><i class="fas fa-star"></i> 4.9 avg rating</span>
+                        <span><i class="fas fa-users"></i> 15K+ students</span>
+                    </div>
+                </a>
+                <a href="#" class="trending-card">
+                    <span class="trend-rank">#2</span>
+                    <h3>Data Science</h3>
+                    <p>1,879 active tutors</p>
+                    <div class="trend-stats">
+                        <span><i class="fas fa-star"></i> 4.8 avg rating</span>
+                        <span><i class="fas fa-users"></i> 12K+ students</span>
+                    </div>
+                </a>
+                <a href="#" class="trending-card">
+                    <span class="trend-rank">#3</span>
+                    <h3>English Speaking</h3>
+                    <p>1,654 active tutors</p>
+                    <div class="trend-stats">
+                        <span><i class="fas fa-star"></i> 4.9 avg rating</span>
+                        <span><i class="fas fa-users"></i> 18K+ students</span>
+                    </div>
+                </a>
+                <a href="#" class="trending-card">
+                    <span class="trend-rank">#4</span>
+                    <h3>Web Development</h3>
+                    <p>1,432 active tutors</p>
+                    <div class="trend-stats">
+                        <span><i class="fas fa-star"></i> 4.7 avg rating</span>
+                        <span><i class="fas fa-users"></i> 10K+ students</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2>Explore Skills by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="category-stats">
+                        <span class="tutor-count">250+ Tutors</span>
+                        <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                    <h3>Business & Marketing</h3>
+                    <p>Digital Marketing, Finance, Entrepreneurship</p>
+                    <div class="popular-topics">
+                        <span>Digital Marketing</span>
+                        <span>Finance</span>
+                        <span>SEO</span>
+                    </div>
+                    <a href="#" class="explore-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <div class="category-stats">
+                        <span class="tutor-count">350+ Tutors</span>
+                        <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                    <h3>Programming & Web Development</h3>
+                    <p>Python, JavaScript, React, Node.js</p>
+                    <div class="popular-topics">
+                        <span>Python</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                    </div>
+                    <a href="#" class="explore-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-palette"></i>
+                    <div class="category-stats">
+                        <span class="tutor-count">180+ Tutors</span>
+                        <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                    </div>
+                    <h3>Design & Creativity</h3>
+                    <p>UI/UX, Graphic Design, Digital Art</p>
+                    <div class="popular-topics">
+                        <span>UI/UX</span>
+                        <span>Figma</span>
+                        <span>Adobe</span>
+                    </div>
+                    <a href="#" class="explore-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-guitar"></i>
+                    <div class="category-stats">
+                        <span class="tutor-count">150+ Tutors</span>
+                        <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                    <h3>Music & Art</h3>
+                    <p>Guitar, Piano, Drawing, Painting</p>
+                    <div class="popular-topics">
+                        <span>Guitar</span>
+                        <span>Piano</span>
+                        <span>Drawing</span>
+                    </div>
+                    <a href="#" class="explore-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-atom"></i>
+                    <div class="category-stats">
+                        <span class="tutor-count">200+ Tutors</span>
+                        <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                    <h3>Science & Engineering</h3>
+                    <p>Physics, Chemistry, Mechanical Engineering</p>
+                    <div class="popular-topics">
+                        <span>Physics</span>
+                        <span>Chemistry</span>
+                        <span>Engineering</span>
+                    </div>
+                    <a href="#" class="explore-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How SkillSwap Works</h2>
+                <p class="section-subtitle">Get started in just a few simple steps</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Find a Tutor</h3>
+                    <p>Browse through our skilled tutors or post your specific requirements</p>
+                    <div class="step-features">
+                        <span><i class="fas fa-check"></i> Verified Profiles</span>
+                        <span><i class="fas fa-check"></i> Detailed Reviews</span>
+                        <span><i class="fas fa-check"></i> Smart Matching</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Connect</h3>
+                    <p>Message tutors, discuss your needs, and schedule sessions</p>
+                    <div class="step-features">
+                        <span><i class="fas fa-check"></i> Instant Chat</span>
+                        <span><i class="fas fa-check"></i> Video Calls</span>
+                        <span><i class="fas fa-check"></i> Flexible Scheduling</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Learn</h3>
+                    <p>Have productive sessions and achieve your learning goals</p>
+                    <div class="step-features">
+                        <span><i class="fas fa-check"></i> Interactive Tools</span>
+                        <span><i class="fas fa-check"></i> Resource Sharing</span>
+                        <span><i class="fas fa-check"></i> Progress Tracking</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Review</h3>
+                    <p>Rate your experience and help others find great tutors</p>
+                    <div class="step-features">
+                        <span><i class="fas fa-check"></i> Detailed Feedback</span>
+                        <span><i class="fas fa-check"></i> Quality Metrics</span>
+                        <span><i class="fas fa-check"></i> Reward Points</span>
+                    </div>
+                </div>
+            </div>
+            <div class="steps-cta">
+                <a href="#" class="btn btn-primary">Get Started Now <i class="fas fa-arrow-right"></i></a>
+                <p class="steps-note">No credit card required • Free to join</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tutors -->
+    <section class="featured-tutors">
+        <div class="container">
+            <h2>Meet Our Top Tutors</h2>
+            <div class="tutor-grid">
+                <div class="tutor-card">
+                    <div class="tutor-header">
+                        <img src="images/tutor1.jpg" alt="Tushar Pawar">
+                        <div class="tutor-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                        <button class="play-intro" data-video="tutor1-intro.mp4">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Watch Intro</span>
+                        </button>
+                    </div>
+                    <div class="tutor-info">
+                        <h3>Tushar Pawar</h3>
+                        <p class="specialty">Web Development Expert</p>
+                        <div class="skills">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Python</span>
+                        </div>
+                        <p class="sessions">127 sessions completed</p>
+                        <div class="tutor-actions">
+                            <a href="profile.html" class="btn btn-outline">View Profile</a>
+                            <a href="book.html" class="btn btn-primary">Book a Session</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tutor-card">
+                    <div class="tutor-header">
+                        <img src="images/tutor2.jpg" alt="Sarang Gaikwad">
+                        <div class="tutor-rating">
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <button class="play-intro" data-video="tutor2-intro.mp4">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Watch Intro</span>
+                        </button>
+                    </div>
+                    <div class="tutor-info">
+                        <h3>Sarang Gaikwad</h3>
+                        <p class="specialty">Business Strategy & Marketing</p>
+                        <div class="skills">
+                            <span>Digital Marketing</span>
+                            <span>SEO</span>
+                            <span>Analytics</span>
+                        </div>
+                        <p class="sessions">98 sessions completed</p>
+                        <div class="tutor-actions">
+                            <a href="profile.html" class="btn btn-outline">View Profile</a>
+                            <a href="book.html" class="btn btn-primary">Book a Session</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tutor-card">
+                    <div class="tutor-header">
+                        <img src="images/tutor3.jpg" alt="Aaryan">
+                        <div class="tutor-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                        <button class="play-intro" data-video="tutor3-intro.mp4">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Watch Intro</span>
+                        </button>
+                    </div>
+                    <div class="tutor-info">
+                        <h3>Aaryan</h3>
+                        <p class="specialty">UX Design & Creative Arts</p>
+                        <div class="skills">
+                            <span>UI/UX</span>
+                            <span>Figma</span>
+                            <span>Adobe XD</span>
+                        </div>
+                        <p class="sessions">156 sessions completed</p>
+                        <div class="tutor-actions">
+                            <a href="profile.html" class="btn btn-outline">View Profile</a>
+                            <a href="book.html" class="btn btn-primary">Book a Session</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"SkillSwap helped me ace my programming course. My tutor was amazing!"</p>
+                    <div class="testimonial-author">
+                        <img src="images/student1.jpg" alt="Student">
+                        <div>
+                            <h4>Mike Smith</h4>
+                            <p>Computer Science Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"I improved my math skills significantly thanks to the excellent tutors here."</p>
+                    <div class="testimonial-author">
+                        <img src="images/student2.jpg" alt="Student">
+                        <div>
+                            <h4>Lisa Wong</h4>
+                            <p>Engineering Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"The platform made it easy to find the right tutor for my language studies."</p>
+                    <div class="testimonial-author">
+                        <img src="images/student3.jpg" alt="Student">
+                        <div>
+                            <h4>James Brown</h4>
+                            <p>International Studies Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I become a tutor?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sign up, complete your profile with your expertise and experience, and start connecting with students. Our verification process ensures quality and trust.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is SkillSwap free?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Creating an account is free. Tutors set their own rates, and we charge a small service fee to maintain the platform and ensure quality service.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I schedule a lesson?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Browse tutors, select one that matches your needs, and use our scheduling system to book a time slot. You can communicate with the tutor before the session.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What if I need to cancel?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can cancel or reschedule a session up to 24 hours before the scheduled time. Our flexible cancellation policy ensures fairness for both students and tutors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Learning?</h2>
+            <p>Join thousands of students improving their skills every day</p>
+            <div class="cta-buttons">
+                <a href="register.html" class="btn btn-primary">Get Started</a>
+                <a href="find-tutor.html" class="btn btn-secondary">Browse Tutors</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>SkillSwap</h3>
+                    <p>Connecting students for better learning outcomes through peer-to-peer tutoring and collaboration.</p>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="find-tutor.html">Find Tutors</a></li>
+                        <li><a href="become-tutor.html">Become a Tutor</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="safety.html">Safety Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="guidelines.html">Community Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SkillSwap. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

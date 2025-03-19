@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session - SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/payments/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <!-- Header (reuse the same header from find_tutor.html) -->
+    <header class="header">
+        <!-- ... header content ... -->
+    </header>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-grid">
+                <!-- Tutor Info -->
+                <div class="tutor-info-card">
+                    <div class="tutor-header">
+                        <img src="" alt="" id="tutor-image" class="tutor-avatar">
+                        <div class="tutor-details">
+                            <h2 id="tutor-name"></h2>
+                            <p id="tutor-specialty"></p>
+                            <div class="tutor-rating">
+                                <i class="fas fa-star"></i>
+                                <span id="tutor-rating"></span>
+                                <span id="total-sessions"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tutor-body">
+                        <div class="session-details">
+                            <h3>Session Details</h3>
+                            <div class="session-options">
+                                <div class="session-duration">
+                                    <label>Duration</label>
+                                    <select id="session-duration" onchange="updateTotalAmount()">
+                                        <option value="30">30 minutes</option>
+                                        <option value="60" selected>1 hour</option>
+                                        <option value="90">1.5 hours</option>
+                                        <option value="120">2 hours</option>
+                                    </select>
+                                </div>
+                                <div class="session-type">
+                                    <label>Session Type</label>
+                                    <select id="session-type">
+                                        <option value="online">Online Session</option>
+                                        <option value="in-person">In-Person</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="session-schedule">
+                                <label>Select Date & Time</label>
+                                <input type="datetime-local" id="session-datetime" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Summary -->
+                <div class="payment-container">
+                    <div id="payment-component"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module">
+        import PaymentComponent from './js/payments/paymentComponent.js';
+        import paymentUI from './js/payments/paymentUI.js';
+
+        // Get tutor details from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const tutorId = urlParams.get('tutor_id');
+        const tutorName = urlParams.get('tutor_name');
+        const tutorSpecialty = urlParams.get('specialty');
+        const tutorRating = urlParams.get('rating');
+        const tutorSessions = urlParams.get('sessions');
+        const baseRate = parseFloat(urlParams.get('rate') || '500'); // Default to ₹500 if not specified
+        const isPremium = urlParams.get('premium') === 'true';
+
+        // Update tutor information
+        document.getElementById('tutor-name').textContent = tutorName;
+        document.getElementById('tutor-specialty').textContent = tutorSpecialty;
+        document.getElementById('tutor-rating').textContent = tutorRating;
+        document.getElementById('total-sessions').textContent = `${tutorSessions} sessions completed`;
+        
+        // Initialize payment component
+        function updateTotalAmount() {
+            const duration = parseInt(document.getElementById('session-duration').value);
+            const amount = (baseRate * duration) / 60; // Calculate pro-rated amount based on duration
+
+            // Initialize or update payment component
+            PaymentComponent.init('payment-component', {
+                amount: amount,
+                sellerId: tutorId,
+                serviceId: `session_${Date.now()}`,
+                sellerType: isPremium ? 'PREMIUM_SELLER' : 'BASIC_SELLER'
+            });
+        }
+
+        // Initial update
+        updateTotalAmount();
+
+        // Add event listeners
+        document.getElementById('session-duration').addEventListener('change', updateTotalAmount);
+        document.getElementById('session-type').addEventListener('change', updateTotalAmount);
+    </script>
+
+    <style>
+        .booking-section {
+            padding: 2rem 0;
+            background-color: var(--surface-color);
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tutor-info-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .tutor-header {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tutor-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .session-details {
+            margin-top: 1.5rem;
+        }
+
+        .session-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .session-duration, .session-type, .session-schedule {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        select, input[type="datetime-local"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            .booking-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html> 
